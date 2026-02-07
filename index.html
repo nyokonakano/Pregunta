@@ -1,46 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Pacifico&display=swap"
       rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <title>¿Quieres ser mi San Valentín?</title>
+    <title>¿Quieres ser mi San Valentín? 💕</title>
   </head>
   <body>
+    <!-- Partículas de corazones flotantes -->
+    <div class="hearts-container" id="hearts-container"></div>
+
+    <!-- Botón de música -->
+    <!--<button class="music-btn" id="music-btn" aria-label="Reproducir música">
+      🎵
+    </button>-->
+
+    <!-- Contenedor de la pregunta -->
     <div class="question-container container">
-      <div
-        class="tenor-gif-embed"
-        id="gif-container"
-        data-postid="25789758"
-        data-share-method="host"
-        data-width="100%">
-        <a href="https://tenor.com/view/bubu-dudu-kiss-bubududukiwi-gif-25789758"
-        ></a>
-        <a href="https://tenor.com/search/bubu+dudu-stickers"
-        ></a>
+      <div class="gif-wrapper">
+        <div
+          class="tenor-gif-embed"
+          id="gif-container"
+          data-postid="25789758"
+          data-share-method="host"
+          data-aspect-ratio="1.0"
+          data-width="100%">
+          <a href="https://tenor.com/view/bubu-dudu-kiss-bubududukiwi-gif-25789758"></a>
+        </div>
       </div>
+      
       <script
         type="text/javascript"
         async
         src="https://tenor.com/embed.js"></script>
 
       <h2 class="question">¿Quieres ser mi San Valentín?</h2>
+      
+      <p class="attempt-counter" id="attempt-counter"></p>
+      
       <div class="button-container">
-        <button class="yes-btn btn js-yes-btn">SI</button>
-        <button class="no-btn btn js-no-btn">Uy no😣</button>
+        <button class="yes-btn btn js-yes-btn" aria-label="Sí quiero">
+          <span>SÍ 💕</span>
+        </button>
+        <button class="no-btn btn js-no-btn" aria-label="No quiero">
+          <span>Uy no😣</span>
+        </button>
       </div>
     </div>
 
+    <!-- Contenedor del resultado -->
     <div class="result-container container">
-      <video class="gif-result" src="cute love gif.mp4" autoplay loop></video>
-      <h2>Sabia que dirías que si😍!</h2>
+      <div class="gif-wrapper">
+        <div
+          class="tenor-gif-embed"
+          data-postid="14525912051662013798"
+          data-share-method="host" data-aspect-ratio="1"
+          data-width="100%">
+          <a href="https://tenor.com/view/dudu-scared-bubu-dudu-kiss-twitter-bubududukiwi-gif-14525912051662013798"></a>
+          <a href="https://tenor.com/search/dudu+scared-gifs"></a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+      </div>
+      
+      <h2 class="result-title">¡Sabía que dirías que sí! 😍</h2>
+
+       <!-- Carta de amor con efecto typewriter -->
+      <div class="love-letter">
+        <div class="letter-header">💌 Para ti, mi San Valentín</div>
+        <div class="letter-content" id="letter-text"></div>
+        <div class="letter-signature">Con todo mi amor 💕</div>
+      </div>
+
+
+      <p class="result-message">
+        ¡Eres la persona más especial para mí! 💖<br>
+        Este San Valentín será increíble juntos ✨
+      </p>
+      
+      <button class="share-btn" id="share-btn">
+        Capturar momento 📸
+      </button>
     </div>
 
+    <!-- Loader de corazón -->
     <div class="cssload-main">
       <div class="cssload-heart">
         <span class="cssload-heartL"></span>
@@ -49,6 +96,12 @@
       </div>
       <div class="cssload-shadow"></div>
     </div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
